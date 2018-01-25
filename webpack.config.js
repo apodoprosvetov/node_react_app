@@ -78,6 +78,11 @@ if (process.env.NODE_ENV === 'development') {
         new WebPack.HotModuleReplacementPlugin()
     );
     module.exports.devServer = {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET",
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        },
         host: 'localhost',
         port: 3030,
         publicPath: 'http://localhost:3030/',
